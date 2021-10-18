@@ -1,0 +1,55 @@
+/* eslint-disable */
+@font-face {
+    font-family: 'iconfont';
+    src:
+        url(iconfont.eot?t=1601286712825); /* IE9 */
+    src:
+        url(iconfont.eot?t=1601286712825#iefix) format("embedded-opentype"), /* IE6-IE8 */
+        url(iconfont.woff?t=1601286712825) format("woff"),
+        url(iconfont.ttf?t=1601286712825) format("truetype"), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+        url(iconfont.svg?t=1601286712825#iconfont) format("svg"); /* iOS 4.1- */
+}
+
+.iconfont {
+    font-family: 'iconfont' !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-route::before {
+    content: '\e65f';
+}
+
+.icon-gslb::before {
+    content: '\e6a7';
+}
+
+.icon-user::before {
+    content: '\e61e';
+}
+
+.icon-cert::before {
+    content: '\e63f';
+}
+
+.icon-cluster::before {
+    content: '\e67a';
+}
+
+.icon-common::before {
+    content: '\e61d';
+}
+
+.icon-product::before {
+    content: '\e67c';
+}
+
+.icon-instancePool::before {
+    content: '\e65d';
+}
+
+.icon-subnav::before {
+    content: '\e765';
+}
