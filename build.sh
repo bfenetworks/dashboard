@@ -30,9 +30,19 @@ if [ $? -ne 0 ]; then
 fi
 echo "npm build success"
 
-mv noahv output
-rm  output/static/*/*.gz
-cp version.txt output/
+echo "pack start"
+rm  noahv/static/*/*.gz
+cp version.txt noahv/
+cp -r docs noahv/
+cp -r README.md noahv/
+mkdir output
+mv noahv "bfe_dashboard_${version}"
+mv "bfe_dashboard_${version}" output/
+cd output
+tar -czvf "bfe_dashboard_${version}.tar.gz" "bfe_dashboard_${version}"
+shasum -a 256 "bfe_dashboard_${version}.tar.gz" > "bfe_dashboard_${version}_checksums.txt"
+rm -rf "bfe_dashboard_${version}"
+echo "pack success"
 
 echo "build success"
 exit 0;
