@@ -1,0 +1,321 @@
+.change-ivu-drawer-header-inner {
+    .ivu-drawer-header-inner {
+        font-size: 16px !important;
+    }
+}
+.border-bottom {
+    border-top: 0;
+    border-left: 0;
+    border-bottom: 2px transparent solid;
+    border-image: linear-gradient(to right, #000718, #fff) 1 10;
+}
+
+.bfe-drawer {
+    .ivu-drawer {
+        width: calc(100% - 280px) !important;
+    }
+}
+
+.version {
+    position: fixed;
+    bottom: 50px;
+}
+
+.clearFloat {
+    zoom: 1;
+
+    &::after {
+        content: '';
+        height: 0;
+        visibility: hidden;
+        height: 0;
+        display: block;
+        clear: both;
+    }
+}
+
+.add-button {
+    margin-bottom: 30px;
+}
+.com-btn-box {
+    display: flex;
+    flex-direction: row-reverse;
+    button + button {
+        margin-right: 10px;
+    }
+}
+.custom-circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: green;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+.table-title-input {
+    width: 230px;
+    float: right;
+}
+.table-td-bc {
+    border: 1px solid #d9ecff;
+    margin-right: 5px;
+    margin-bottom: 2px;
+    padding: 3px;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 3px;
+    background: #ecf5ff;
+    color: #409eff;
+}
+.com-mini-btn {
+    padding: 5px 8px !important;
+}
+.ivu-notice {
+    width: 405px;
+}
+
+.alert {
+    width: 65%;
+    font-size: 14px;
+    color: #17233d;
+    line-height: 30px;
+}
+.successColor {
+    color: white;
+    background-color: #00a65a;
+}
+.errorColor {
+    color: white;
+    background-color: #dd4b39;
+}
+.com-border-background {
+    background: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 9.5px;
+}
+.com-bfeDialog {
+    background-color: #eee !important;
+}
+.com-create-input {
+    width: 100%;
+}
+.com-create-btn {
+    margin-left: 8px;
+}
+
+.from-item-inp {
+    width: 100%;
+}
+.reset-btn {
+    margin-left: 8px;
+}
+.panel {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    .panel-header {
+        color: #333;
+        background-color: #f5f5f5;
+        padding: 10px 15px;
+        font-size: 16px;
+        font-weight: 600;
+    }
+    .panel-body {
+        padding: 15px;
+        ul {
+            padding: 2px 0;
+            .title {
+                text-align: right;
+                width: 200px;
+                float: left;
+                font-weight: 600;
+                font-size: 14px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                min-height: 22px;
+            }
+            .value {
+                float: left;
+                padding-left: 20px;
+                font-size: 14px;
+            }
+            .info {
+                padding-left: 160px;
+                font-size: 14px;
+                min-height: 22px;
+            }
+        }
+    }
+}
+.panel + .panel {
+    margin-top: 10px;
+}
+#product-body {
+    .lock {
+        margin-top: 0;
+        margin-bottom: 15px;
+        .locks-btn {
+            padding-left: 0;
+        }
+    }
+}
+.drawer-footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-top: 1px solid #e8e8e8;
+    padding: 10px 16px;
+    text-align: right;
+    background: #fff;
+    z-index: 999;
+    margin: 0px;
+}
+.ivu-drawer-body {
+    position: static;
+    padding-bottom: 95px;
+}
+
+.copyright {
+    line-height: 50px;
+    text-align: center;
+}
+.bfe-breadcrumb {
+    padding: 8px 15px;
+    list-style: none;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: 500;
+}
+.bfe-login {
+    @box-width: 400px;
+    width: 100%;
+    @font-color: #828a99;
+    height: 100%;
+    @bfe-header-height: 55px;
+    display: -webkit-flex; /*在webkit内核的浏览器上使用要加前缀*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: url("../img/loginBg.png") no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+    .clear {
+        height: @bfe-header-height;
+    }
+    .bfe-login-hearder {
+        height: @bfe-header-height;
+        width: 100%;
+        line-height: @bfe-header-height;
+        background: #fff;
+        overflow: hidden;
+        margin: 10px 30px;
+        font-weight: 600;
+        font-size: 24px;
+        color: @font-color;
+        img {
+            z-index: 999;
+            width: 240px;
+            height: 100%;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        span {
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+    .login-wrap {
+        width: @box-width;
+        background: #fff;
+        box-shadow: 0 5px 8px rgba(102, 102, 102, 0.16);
+        padding: 50px 30px;
+        margin-top: 7%;
+        .title {
+            text-align: center;
+            font-size: 25px;
+            color: @font-color;
+            margin-bottom: 24px;
+            .user_title {
+                height: 40px;
+            }
+        }
+        .code-common-style {
+            height: 35px;
+            padding: 2px 3px;
+            border: 0;
+            display: inline-block;
+            text-align: center;
+            vertical-align: middle;
+            cursor: pointer;
+            box-sizing: border-box;
+        }
+        .code {
+            .code-common-style ();
+            margin: 0 0.5%;
+            color: blue;
+            background-color: #d8b7e3;
+            letter-spacing: 3px;
+            font-size: 24px;
+            width: 33%;
+        }
+        .switchCode {
+            .code-common-style ();
+            width: 15%;
+            color: #3c8dbc;
+            font-size: 14px;
+            &:hover {
+                color: #72afd2;
+            }
+        }
+    }
+    .user_login_btn {
+        width: 100%;
+        height: 55px;
+        font-size: 24px;
+    }
+}
+.login-wrap {
+    .change-input-style {
+        .ivu-input {
+            height: 35px;
+        }
+    }
+    .code-input-style {
+        width: 40%;
+    }
+}
+.upsertVs {
+    /deep/.ivu-input-number-input {
+        text-align: center;
+    }
+    display: flex;
+    margin: 5px 0 20px;
+    li {
+        width: 0;
+        text-align: right;
+        flex-grow: 5;
+        padding: 0 15px;
+        align-self: center;
+        .InputNumber {
+            width: 100%;
+        }
+    }
+    .unit {
+        flex-grow: 2;
+    }
+    .font-style {
+        font-weight: 600;
+        font-size: 14px;
+    }
+}
+
+.vip_cont {
+    width: 360px;
+    .vip_cont_title {
+        background: #eee;
+    }
+}

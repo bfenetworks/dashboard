@@ -1,0 +1,41 @@
+.forwardRule {
+    .forwardRule-card + .forwardRule-card {
+        margin-top: 10px;
+    }
+    .forwardRule-card {
+        transition: transform 1s;
+        .title {
+            button {
+                float: right;
+                position: relative;
+                bottom: 7.5px;
+            }
+            button + button {
+                margin-right: 5px;
+            }
+        }
+        .body {
+            background-color: #f5f5f5;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 10px;
+        }
+    }
+}
+.drog-move {
+    transition: transform 1s;
+}
+.disabled {
+    color: #999;
+}
+.defaultStyle {
+    color: #999;
+    margin: 0 3px;
+}
+.iconStyle {
+    color: #409eff;
+    margin: 0 3px;
+}
+.cluster_id_title {
+    width: 100%;
+}
