@@ -225,7 +225,7 @@ export default {
         updateSubClusters(data) {
             return this.$request({
                 url: this.$urlFormat(
-                    'products/{product_name}/clusters/{cluster_name}/sub_clusters',
+                    'products/{product_name}/clusters/{cluster_name}/sub-clusters',
                     { cluster_name: this.baseConfigData.name }
                 ),
                 method: 'patch',

@@ -56,7 +56,7 @@ export default {
         getInnerUserList() {
             this.loading = true;
             this.$request({
-                url: 'auth/inner-users',
+                url: 'auth/tokens',
                 method: 'get'
             }).then(data => {
                 this.loading = false;
@@ -74,7 +74,7 @@ export default {
         },
         onAdd() {
             this.$request({
-                url: 'auth/session-keys/inner',
+                url: 'auth/tokens',
                 method: 'post'
             }).then(data => {
                 this.loading = false;
@@ -92,8 +92,8 @@ export default {
                 content: this.$t('com.confirmDel') + params.row.name + '?',
                 onOk: () => {
                     this.$request({
-                        url: this.$urlFormat('auth/session-keys/{session_key}', {
-                            session_key: params.row.name
+                        url: this.$urlFormat('auth/tokens/{tokens}', {
+                            tokens: params.row.name
                         }),
                         method: 'delete'
                     }).then(data => {

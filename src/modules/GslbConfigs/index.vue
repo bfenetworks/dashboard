@@ -117,7 +117,7 @@ export default {
         },
         acceptDataHandler(data) {
             this.$request({
-                url: this.$urlFormat('products/{product_name}/clusters/{cluster_name}/scheduler/manual',
+                url: this.$urlFormat('products/{product_name}/clusters/{cluster_name}/scheduler',
                 {cluster_name: this.gslbInfoName}),
                 method: 'patch',
                 data: data.data.manual_scheduler

@@ -151,7 +151,7 @@ export default {
     methods: {
         getSubClusters() {
             this.$request({
-                url: this.$urlFormat('products/{product_name}/sub_clusters'),
+                url: this.$urlFormat('products/{product_name}/sub-clusters'),
                 method: 'get'
             }).then(data => {
                 if (data.status === 200) {
