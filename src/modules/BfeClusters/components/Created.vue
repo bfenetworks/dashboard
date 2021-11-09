@@ -32,14 +32,14 @@
             </FormItem>
             <FormItem class="com-btn-box drawer-footer">
                 <Button
-                    class="btnBox-btn"
-                    @click="handleReset('formData')"
-                >{{ $t('com.reset') }}
-                </Button>
-                <Button
                     type="primary"
                     @click="handleSubmit('formData')"
                 >{{ $t('com.submit') }}
+                </Button>
+                <Button
+                    class="btnBox-btn"
+                    @click="handleReset('formData')"
+                >{{ $t('com.reset') }}
                 </Button>
             </FormItem>
         </Form>
@@ -47,6 +47,7 @@
 </template>
 
 <script>
+import { cloneDeep } from 'lodash';
 export default {
     props: {
         instancePoolList: {
@@ -102,11 +103,11 @@ export default {
     },
     methods: {
         handleSubmit(name) {
-            let bfeName = `BFE-${this.formData.name}`;
+            let tmpData = cloneDeep(this.formData);
+            tmpData.name = `BFE-${this.formData.name}`;
             this.$refs[name].validate(valid => {
                 if (valid) {
-                    this.formData.name = bfeName;
-                    this.$emit('submitForm', this.formData);
+                    this.$emit('submitForm', tmpData);
                 }
                 else {
                     this.$Message.error({

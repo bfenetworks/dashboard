@@ -121,7 +121,7 @@ export default {
                         password: this.formData.password
                     };
                     this.$request({
-                        url: 'auth/session-keys/password',
+                        url: 'auth/session-keys',
                         method: 'post',
                         data: body,
                         withoutAuth: true
