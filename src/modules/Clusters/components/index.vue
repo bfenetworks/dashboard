@@ -35,7 +35,7 @@
 
         <Scheduler
             v-show="stepsCurrentState === 4 && isAdd"
-            :schedulerConfig="schedulerConfig"
+            :scheduler="scheduler"
             :isAdd="isAdd"
             :subClustersData="subClustersData"
             :reportFlag="schedulerSubmitFlag"
@@ -48,7 +48,7 @@
             :baseConfigData="baseConfigData"
             :subClustersData="subClustersData"
             :passiveHealthData="passiveHealthData"
-            :schedulerConfig="schedulerConfig"
+            :scheduler="scheduler"
             :subClusterProductList="subClusterProductList"
             :isAdd="isAdd"
             :reportFlag="reviewSubmitFlag"
@@ -160,7 +160,7 @@ export default {
             stepsCurrentState: 0,
             baseConfigData: {},
             passiveHealthData: {},
-            schedulerConfig: {},
+            scheduler: {},
             baseSubmitFlag: false,
             timeoutSubmitFlag: false,
             passiveHealthSubmitFlag: false,
@@ -203,7 +203,6 @@ export default {
         },
         updataClusterBasicData(params) {
             delete params.scheduler;
-            delete params.manual_scheduler;
             delete params.sub_clusters;
             return this.$request({
                 url: this.$urlFormat('products/{product_name}/clusters/{cluster_name}', {
@@ -248,8 +247,7 @@ export default {
                 sub_clusters: this.subClustersData,
                 sticky_sessions: this.baseConfigData.sticky_sessions,
                 passive_health_check: this.passiveHealthData,
-                scheduler: this.schedulerConfig.scheduler,
-                manual_scheduler: this.schedulerConfig.manual_scheduler
+                scheduler: this.scheduler
             };
             data.basic.connection.cancel_on_client_close = this.baseConfigData.connection.
             cancel_on_client_close === 'true';
@@ -307,10 +305,7 @@ export default {
             };
             this.passiveHealthData = tmpData.passive_health_check;
             this.subClustersData = tmpData.sub_clusters ? tmpData.sub_clusters : [];
-            this.schedulerConfig = {
-                scheduler: tmpData.scheduler,
-                manual_scheduler: tmpData.manual_scheduler
-            };
+            this.scheduler = tmpData.scheduler
         },
         back() {
             if (!this.isAdd && this.stepsCurrentState === 5) {

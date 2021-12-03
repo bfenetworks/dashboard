@@ -45,6 +45,7 @@ module.exports = {
         sysAdmin: '系统管理员',
         ordinaryUser: '租户管理员',
         sysAdminView: '系统视图',
+        configureExportUser: '配置导出管理员',
         productView: '租户视图',
         currentVersion: '当前版本号 ',
 
@@ -71,7 +72,7 @@ module.exports = {
         tipNotEmpty: '输入不能为空',
         tipNotEmptyX: '{obj}不能为空',
         tipValidateError: '请检查参数填写是否规范!',
-        tipMustStartWithX: '{obj}必须以 / 开头',
+        tipMustStartWithX: '{obj}必须以 / 开头'
     },
     nav: {
         Backend: '后端',
@@ -100,7 +101,7 @@ module.exports = {
         portValue: '端口值',
 
         tipWeightRang: '实例权重错误, 范围1～100',
-        tipPortRang: 'Default端口错误, 范围1～65535',
+        tipPortRang: 'Default端口错误, 范围1～65535'
     },
     login: {
         userLogin: '用户登录',
@@ -128,7 +129,7 @@ module.exports = {
         innerUser: 'Token',
 
         tipInnerUserDel: 'Token 是内部程序访问APIServer的鉴权凭证，请按需创建，谨慎删除',
-        tipDisassociate: '是否确认解除用户关联？',
+        tipDisassociate: '是否确认解除{obj}关联？',
         tipDisassociateSucc: '解除关联成功！',
         tipAssociationSucc: '关联成功',
         tipNameRule: '用户名仅允许输入数字、大小写字母、点、下划线、中划线',
@@ -152,8 +153,10 @@ module.exports = {
 
         tipBasicRule: '请填写至少一项匹配条件(host/path)',
         tipExpression: 'false为大小写敏感',
-        tipPathRule: '可输入多个path,以逗号分隔，每个path以/开始, 例如：/pa，/pa/*。不输入或path为*表示匹配任意path',
-        tipHostNameRule: '可输入多个host,用逗号分隔。例如：www.a.com，*.b.com。不输入或者host为*表示匹配任意host',
+        tipPathRule:
+            '可输入多个path,以逗号分隔，每个path以/开始, 例如：/pa，/pa/*。不输入或path为*表示匹配任意path',
+        tipHostNameRule:
+            '可输入多个host,用逗号分隔。例如：www.a.com，*.b.com。不输入或者host为*表示匹配任意host',
         tipDel: '确定删除 ? 提交并生效后删除成功',
         tipAdvanceMate: '由高级规则匹配',
         tipHitRule: '命中此规则的请求转发至指定的集群',
@@ -233,7 +236,8 @@ module.exports = {
         tipSubClusterCapacityTotalRule: 'BFE集群下的子集群比重总和必须为100',
         tipValueNonnegativeInteger: '值必须是非负整数',
         tipsValueMax: '输入值过大',
-        tipClusterNameRule: '集群名称只能包含字母、数字以及-杠、.点、$符、+加号、~波浪线且长度大于1',
+        tipClusterNameRule:
+            '集群名称只能包含字母、数字以及-杠、.点、$符、+加号、~波浪线且长度大于1',
         tipNameRule: '名称只能包含字母、数字以及短横线-、下划线、点，且长度大于1小于255'
     },
     subCluster: {
@@ -260,7 +264,8 @@ module.exports = {
         contactPersonEmail: '接口人邮箱',
         teamMailGroup: '团队邮件组',
         dutyTelephone: '值班电话',
-        delMessage: '<h3>请确保：所有的域名，都已经删除</h3>' + '<p> 请查看左侧菜单栏【域名管理】</p>',
+        delMessage:
+            '<h3>请确保：所有的域名，都已经删除</h3>' + '<p> 请查看左侧菜单栏【域名管理】</p>',
         welcome: '欢迎您',
         promptLanguage: '您可以切到租户视图去管理产品线内的配置',
         productLineManager: '产品线管理员',
@@ -271,6 +276,6 @@ module.exports = {
         tipsPersonRule: '多个接口人之间用 ；分割',
         tipsIntroductionRule: '请填写产品线简介',
         tipMailNotEmpty: '请填写团队邮件组，多个邮件地址用 ；分割',
-        tipPhoneNotEmpty: '请填写值班手机，多个号码间用 ；分割',
+        tipPhoneNotEmpty: '请填写值班手机，多个号码间用 ；分割'
     }
 };

@@ -46,6 +46,7 @@ module.exports = {
         sysAdmin: 'System Admin',
         ordinaryUser: 'Tenant Admin',
         sysAdminView: 'System View',
+        configureExportUser: 'Configure Export Admin',
         productView: 'Tenant View',
         currentVersion: 'Current Version Number ',
 
@@ -72,7 +73,7 @@ module.exports = {
         tipNotEmpty: 'Empty not allowed',
         tipNotEmptyX: '{obj} should not be empty',
         tipValidateError: 'Please check if all parameters are input correctly!',
-        tipMustStartWithX: '{obj} should be started with / ',
+        tipMustStartWithX: '{obj} should be started with / '
     },
     nav: {
         Backend: 'Backend',
@@ -101,7 +102,7 @@ module.exports = {
         protValue: 'Port Number',
 
         tipWeightRang: 'Wrong weight, should be between 1 and 100',
-        tipPortRang: 'Wrong port, shoudl be between 1 and 65535',
+        tipPortRang: 'Wrong port, shoudl be between 1 and 65535'
     },
     login: {
         userLogin: 'User Login',
@@ -127,9 +128,10 @@ module.exports = {
         ordinaryUser: 'User',
         innerUser: 'Token',
 
-        tipInnerUserDel: 'Token is used to authenticate internal program when calling API.' +
-        ' Only create token when need. Delete with caution.',
-        tipDisassociate: 'Confirm to disassociate user?',
+        tipInnerUserDel:
+            'Token is used to authenticate internal program when calling API.' +
+            ' Only create token when need. Delete with caution.',
+        tipDisassociate: 'Confirm to {obj} disassociate?',
         tipDisassociateSucc: 'Successfully disassociated！',
         tipAssociationSucc: 'Successfully associated',
         tipNameRule: 'Only numbers, letters, dot, under dash, underline are allowed for user name',
@@ -153,28 +155,33 @@ module.exports = {
 
         tipExpression: 'False is case sensitive',
         tipBasicRule: 'Please input at lease one type of Match Conditions(host/path)',
-        tipPathRule: 'Input one or multiple path, seperated by a comma. Each path started with / .' +
-        ' Examples：/pa，/pa/*  .  Empty or * means it can match any path value.',
-        tipHostNameRule: 'Input one or multiple host, seperated by a comma. Examples：www.a.com，*.b.com .' +
-        ' Empty or * means it can match any path value.',
+        tipPathRule:
+            'Input one or multiple path, seperated by a comma. Each path started with / .' +
+            ' Examples：/pa，/pa/*  .  Empty or * means it can match any path value.',
+        tipHostNameRule:
+            'Input one or multiple host, seperated by a comma. Examples：www.a.com，*.b.com .' +
+            ' Empty or * means it can match any path value.',
         tipDel: 'Confirm to delelte ? Will be deleted after click  "Submit and Take Effect"  ',
         tipAdvanceMate: 'Advanced Mode',
-        tipHitRule: 'Request that his this rule will be forwarded to the specified destination cluster',
+        tipHitRule:
+            'Request that his this rule will be forwarded to the specified destination cluster',
         tipHitAdvanceRule:
-        'Request that his this rule will continue matching the advanced rule to determine the destination cluster',
+            'Request that his this rule will continue matching the advanced rule to determine the destination cluster',
         tipTargetCluster: 'Specify a destination cluster',
         tipDefaultRule: 'Please specify the destination cluster of Default Rule',
         tipBasic: 'Based on URL, can support most scenarios',
         tipAdvance: 'Based on Condition Expression, support complicated scenarios',
         tipDefault: 'Default Rule will be used if request not hit any other rules',
         tipExplain:
-        'Determine destination cluster for a request, matching order：1.Basic Rules；2.Aavanced Rules；3.Default Rule。',
+            'Determine destination cluster for a request, matching order：1.Basic Rules；2.Aavanced Rules；3.Default Rule。',
         tipExplain2: 'When finish modifying, please click "Submit and Take Effect" to take effect',
-        tipBasicExplain: 'Basic Rules will be searched with host conditions,' +
-        ' then searched with path conditions among rules matching host conditions to determine if a rule is hit',
-        tipAdvanceExplain: 'Advanced rules are searched from up to down. Drag rules to adjust the order',
+        tipBasicExplain:
+            'Basic Rules will be searched with host conditions,' +
+            ' then searched with path conditions among rules matching host conditions to determine if a rule is hit',
+        tipAdvanceExplain:
+            'Advanced rules are searched from up to down. Drag rules to adjust the order',
         tipDefaultExplain:
-        'Required.  If request not hit any other rules, it will be forwarded to destination cluster of Default Rule'
+            'Required.  If request not hit any other rules, it will be forwarded to destination cluster of Default Rule'
     },
     cert: {
         name: 'Certificates',
@@ -208,7 +215,8 @@ module.exports = {
         review: 'Review',
         schedulerConfig: 'Sub-Cluster Load Balancing',
         healthCheckInterval: 'Heachcheck interval(ms)',
-        healthCheckFailnum: 'Failure Threshold (Triggers instance unavailable and initiate passive healthcheck)',
+        healthCheckFailnum:
+            'Failure Threshold (Triggers instance unavailable and initiate passive healthcheck)',
         faultThreshold: 'Failure Threshold',
         healthCheckHost: 'Host',
         healthCheckUri: 'Uri',
@@ -237,11 +245,13 @@ module.exports = {
         tipSubClusterMounted: 'Please mount at least one Sub-Cluster',
         tipBfeClusterNotExist: 'BFE Cluster not exist, please config BFE cluster first',
         tipAtLeastoneInstance: 'Please add at least one instance',
-        tipSubClusterCapacityTotalRule: 'Sum weight of all sub-cluster should be 100 for each BFE Cluster',
+        tipSubClusterCapacityTotalRule:
+            'Sum weight of all sub-cluster should be 100 for each BFE Cluster',
         tipValueNonnegativeInteger: 'Value should be >=0',
         tipsValueMax: 'Input value too big',
         tipClusterNameRule: 'Cluster Name can includes characters, numbers, dash, dot, $, +, ~',
-        tipNameRule: 'Name can includes characters, numbers, dash, underline, dot, and length between 1 and 255'
+        tipNameRule:
+            'Name can includes characters, numbers, dash, underline, dot, and length between 1 and 255'
     },
     subCluster: {
         name: 'SubCluster',
@@ -267,8 +277,9 @@ module.exports = {
         contactPersonEmail: 'Contact Emails',
         teamMailGroup: "Team's Emails",
         dutyTelephone: 'Duty Phones',
-        delMessage: '<h3>Please confirm: All hostname are deleted</h3>' +
-        '<p> Check Hostname Management on the manual on the left</p>',
+        delMessage:
+            '<h3>Please confirm: All hostname are deleted</h3>' +
+            '<p> Check Hostname Management on the manual on the left</p>',
         welcome: 'Welcome',
         promptLanguage: 'To manage configurations in the Product, switch to Tenant View.',
         productLineManager: 'Product Administrator',
@@ -278,7 +289,7 @@ module.exports = {
         tipNameRule: 'Required, can includes characters, numbers and underline',
         tipsPersonRule: 'Seperate multiple contacts by ;',
         tipsIntroductionRule: 'Input product introduction',
-        tipMailNotEmpty: 'Input team\'s email address. Seperate multiple email by ;',
-        tipPhoneNotEmpty: 'Input duty phone number. Seperate multiple phone number by ;',
+        tipMailNotEmpty: "Input team's email address. Seperate multiple email by ;",
+        tipPhoneNotEmpty: 'Input duty phone number. Seperate multiple phone number by ;'
     }
 };

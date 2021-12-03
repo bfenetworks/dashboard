@@ -4,7 +4,7 @@
         <Drawer v-model="drawerVisible" :title="$t('gslb.name')" width="70" :mask-closable="false">
             <Scheduler v-if="drawerVisible"
                 :reportFlag="repeatSchedulerFlag"
-                :schedulerConfig="editingSchedulerConfig"
+                :scheduler="editingSchedulerConfig"
                 @submitData="acceptDataHandler"
             />
             <div class="com-btn-box drawer-footer">
@@ -105,10 +105,7 @@ export default {
             });
         },
         onDetailBtnClick(params) {
-            this.editingSchedulerConfig = {
-                scheduler: params.row.scheduler,
-                manual_scheduler: params.row.manual_scheduler
-            };
+            this.editingSchedulerConfig = params.row.scheduler;
             this.gslbInfoName = params.row.name;
             this.drawerVisible = true;
         },
@@ -120,7 +117,7 @@ export default {
                 url: this.$urlFormat('products/{product_name}/clusters/{cluster_name}/scheduler',
                 {cluster_name: this.gslbInfoName}),
                 method: 'patch',
-                data: data.data.manual_scheduler
+                data: data.data
             }).then(data => {
                 if (data.status === 200) {
                     this.drawerVisible = false;

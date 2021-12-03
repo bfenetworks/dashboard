@@ -40,7 +40,7 @@
                 :baseConfigData="baseConfigData"
                 :subClustersData="subClustersData"
                 :passiveHealthData="passiveHealthData"
-                :schedulerConfig="schedulerConfig"
+                :scheduler="scheduler"
                 :subClusterProductList="subClusterProductList"
             />
         </Drawer>
@@ -142,7 +142,7 @@ export default {
             baseConfigData: {},
             passiveHealthData: {},
             subClustersData: [],
-            schedulerConfig: {},
+            scheduler: {},
             subClusterProductList: [],
             mountedSubCluster: []
         };
@@ -210,10 +210,7 @@ export default {
             basic.connection.cancel_on_client_close + '';
             this.passiveHealthData = tmpData.passive_health_check;
             this.subClustersData = tmpData.sub_clusters ? tmpData.sub_clusters : [];
-            this.schedulerConfig = {
-                scheduler: tmpData.scheduler,
-                manual_scheduler: tmpData.manual_scheduler
-            };
+            this.scheduler = tmpData.scheduler,
             this.infoVisible = true;
         },
         onDel(params) {
