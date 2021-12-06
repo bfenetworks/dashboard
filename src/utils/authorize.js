@@ -9,7 +9,7 @@ let excludeRoute = {
 };
 
 function handleRole(userData, role) {
-    if (role === Vue.prototype.$AdminRole && userData.isAdmin) {
+    if (role === Vue.prototype.$AdminRole && userData.is_admin) {
         return roleAdmin;
     }
     if (role === Vue.prototype.$ProductRole) {
@@ -69,7 +69,7 @@ export default async to => {
                 name: 'BFE'
             };
         }
-        if (!product && role === roleUndefined && userData.isAdmin) {
+        if (!product && role === roleUndefined && userData.is_admin) {
             product = systemProduct;
         }
         if (product) {

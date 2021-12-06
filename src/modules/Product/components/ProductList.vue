@@ -87,7 +87,7 @@ export default {
         this.$store.removeProduct();
     },
     mounted() {
-        this.permissionOperation = this.user.isAdmin;
+        this.permissionOperation = this.user.is_admin;
         this.getProducts();
     },
     data() {

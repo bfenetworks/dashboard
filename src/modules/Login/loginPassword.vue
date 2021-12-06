@@ -101,12 +101,11 @@ export default {
     },
     methods: {
         goLogin(data) {
-            data.isAdmin = data.roles.includes('admin');
             this.$store.setUserData(data);
             let home = 'product.list';
             let name = null;
             let role = this.$ProductRole;
-            if (data.isAdmin) {
+            if (data.is_admin) {
                 home = 'product.home';
                 name = 'BFE';
                 role = this.$AdminRole;

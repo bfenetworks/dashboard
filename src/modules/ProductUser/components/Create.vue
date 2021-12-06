@@ -14,7 +14,7 @@
                     :placeholder="$t('com.tipSelectX', {obj: $t('user.name')})"
                 >
                     <Option
-                        v-for="item in associatedUseList"
+                        v-for="item in associatedUserList"
                         :key="item.user_name"
                         :value="item.user_name"
                     >{{ item.user_name }}</Option>
@@ -42,7 +42,6 @@
 
 <script>
 export default {
-    name: 'instancePools',
     props: {
         userNameList: {
             type: Array,
@@ -53,7 +52,7 @@ export default {
     },
     data() {
         return {
-            associatedUseList: [],
+            associatedUserList: [],
             formData: {
                 user_name: '',
             },
@@ -75,9 +74,9 @@ export default {
                 method: 'get'
             }).then(data => {
                 if (data.status === 200) {
-                    this.associatedUseList = data.data.Data;
+                    this.associatedUserList = data.data.Data;
                     if (this.userNameList && this.userNameList.length > 0) {
-                        this.associatedUseList = data.data.Data.filter(item => !this.userNameList.
+                        this.associatedUserList = data.data.Data.filter(item => !this.userNameList.
                         includes(item.user_name));
                     }
                 }
