@@ -33,8 +33,8 @@
                         class="com-create-input"
                     />
                 </FormItem>
-                <FormItem :label="$t('user.role')" prop="roles">
-                    <Checkbox v-model="formItem.roles">{{ $t('com.sysAdmin') }}</Checkbox>
+                <FormItem :label="$t('user.role')" prop="is_admin">
+                    <Checkbox v-model="formItem.is_admin">{{ $t('com.sysAdmin') }}</Checkbox>
                 </FormItem>
             </Form>
             <div class="drawer-footer">
@@ -99,7 +99,7 @@ export default {
                 user_name: '',
                 password: '',
                 confirmPass: '',
-                roles: false
+                is_admin: false
             },
             ruleValidate: {
                     user_name: [

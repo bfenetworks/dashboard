@@ -11,7 +11,7 @@
                         <th>Total</th>
                     </tr>
 
-                    <template v-for="(subClusters, bfeCluster) in localData.manual_scheduler">
+                    <template v-for="(subClusters, bfeCluster) in schedulerData">
                         <tr
                             v-for="(subCluster, index) in Object.keys(subClusters)"
                             :class="[queryTotalRate(subClusters) !== 100 ? 'errorColor' : '', 'td-padding']"
@@ -48,7 +48,7 @@ export default {
     name: 'Scheduler',
 
     props: {
-        schedulerConfig: {
+        scheduler: {
             type: Object,
             default() {
                 return {};
@@ -70,10 +70,10 @@ export default {
     },
 
     watch: {
-        schedulerConfig: {
+        scheduler: {
             handler(v) {
                 if (!this.isAdd) {
-                    this.localData = cloneDeep(v);
+                    this.schedulerData = cloneDeep(v);
                 }
             },
             deep: true,
@@ -113,10 +113,7 @@ export default {
             callback();
         };
         return {
-            localData: {
-                scheduler: 'manual',
-                manual_scheduler: {}
-            },
+            schedulerData: {},
             ruleValidate: {
                 max_region_load: [{required: true, validator: validate}],
                 max_blackhole_load: [{required: true, validator: validate}]
@@ -150,8 +147,8 @@ export default {
                             this.subClustersData.forEach(ele => {
                                 obj[ele] = 0;
                             });
-                            this.$set(this.localData.manual_scheduler, item.name, cloneDeep(obj));
-                            this.$set(this.localData.manual_scheduler[item.name], 'GSLB_BLACKHOLE', 0);
+                            this.$set(this.schedulerData, item.name, cloneDeep(obj));
+                            this.$set(this.schedulerData[item.name], 'GSLB_BLACKHOLE', 0);
                         });
                     }
                 }
@@ -167,8 +164,8 @@ export default {
             return rate;
         },
         obtainEditedData() {
-            for (let key in this.localData.manual_scheduler) {
-                if (this.queryTotalRate(this.localData.manual_scheduler[key]) !== 100) {
+            for (let key in this.schedulerData) {
+                if (this.queryTotalRate(this.schedulerData[key]) !== 100) {
                     this.$Message.error({
                         content: this.$t('cluster.tipSubClusterCapacityTotalRule')
                     });
@@ -176,8 +173,8 @@ export default {
                 }
             }
             this.$emit('submitData', {
-                topic: 'schedulerConfig',
-                data: this.localData
+                topic: 'scheduler',
+                data: this.schedulerData
             });
         }
     }

@@ -77,7 +77,7 @@ import pageTable from '@/components/table/pageTable';
                     loading: true,
                     onOk: () => {
                         this.$request({
-                            url: this.$urlFormat('products/{product_name}/sub_clusters/{sub_cluster_name}',
+                            url: this.$urlFormat('products/{product_name}/sub-clusters/{sub_cluster_name}',
                             {sub_cluster_name: params.name}),
                             method: 'delete'
                         })
@@ -102,7 +102,7 @@ import pageTable from '@/components/table/pageTable';
             getSubClusters() {
                 this.tableLoading = true;
                 this.$request({
-                        url: this.$urlFormat('products/{product_name}/sub_clusters'),
+                        url: this.$urlFormat('products/{product_name}/sub-clusters'),
                         method: 'get'
                 })
                 .then(data => {

@@ -144,7 +144,7 @@ import {ClustersNameRegCheck, DescriptionRegCheck} from '@/utils/const';
             getInstancePool() {
                 this.loading = true;
                 this.$request({
-                    url: this.$urlFormat('products/{product_name}/instance_pools'),
+                    url: this.$urlFormat('products/{product_name}/instance-pools'),
                     method: 'get'
                 }).then((data) => {
                     this.loading = false;

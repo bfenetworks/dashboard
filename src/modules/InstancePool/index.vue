@@ -138,7 +138,7 @@ export default {
         getProductInstancePoolInfo(name) {
             let tmpName = name.split('.')[1];
             this.$request({
-                url: this.$urlFormat('products/{product_name}/instance_pools/{instance_pool_name}', {
+                url: this.$urlFormat('products/{product_name}/instance-pools/{instance_pool_name}', {
                     instance_pool_name: tmpName
                 }),
                 method: 'get'
@@ -153,7 +153,7 @@ export default {
         },
         onDelInstancePool(name) {
             this.$request({
-                url: this.$urlFormat('products/{product_name}/instance_pools/{instance_pool_name}', {
+                url: this.$urlFormat('products/{product_name}/instance-pools/{instance_pool_name}', {
                     instance_pool_name: name
                 }),
                 method: 'delete'
@@ -173,7 +173,7 @@ export default {
             let tmpName = this.$store.getProduct();
             data.name = tmpName.name + '.' + data.name;
             this.$request({
-                url: this.$urlFormat('products/{product_name}/instance_pools'),
+                url: this.$urlFormat('products/{product_name}/instance-pools'),
                 method: 'post',
                 data: data
             })
@@ -190,7 +190,7 @@ export default {
         onUpdatetInstancePool(data) {
             let tmpName = this.currentData.name.split('.')[1];
             this.$request({
-                url: this.$urlFormat('products/{product_name}/instance_pools/{instance_pool_name}', {
+                url: this.$urlFormat('products/{product_name}/instance-pools/{instance_pool_name}', {
                     instance_pool_name: tmpName
                 }),
                 method: 'patch',
@@ -209,7 +209,7 @@ export default {
         getPoolList() {
             this.loading = true;
             this.$request({
-                url: this.$urlFormat('products/{product_name}/instance_pools'),
+                url: this.$urlFormat('products/{product_name}/instance-pools'),
                 method: 'get'
             })
             .then(data => {
