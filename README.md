@@ -2,6 +2,8 @@
 
 BFE Dashboard为 [BFE](https://www.bfe-networks.net/zh_cn/) 的用户提供了一种图形化的操作界面，可以对 BFE 的主要配置进行管理和查看。
 
+![](./docs/images/readme_zh.png)
+
 ## 使用指南
 
 - [中文版](docs/zh-cn/user-guide/SUMMARY.md)
