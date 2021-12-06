@@ -242,6 +242,9 @@ export default {
 .com-btn-box {
     margin-top: 15px;
 }
+.panel .panel-body ul .title {
+    width: 400px;
+}
 table {
     @tableBorder: 1px solid #f4f4f4;
     width: 100%;
