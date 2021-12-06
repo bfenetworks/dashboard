@@ -50,7 +50,6 @@ export default {
     data() {
         const that = this;
         return {
-            nameValue: 'ordinaryUser',
             loading: false,
             tableData: [],
             columns: [

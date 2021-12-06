@@ -5,33 +5,33 @@
             v-model="nameValue"
         >
             <TabPane
-                name="ordinaryUser"
+                name="User"
                 :label="$t('user.ordinaryUser')"
             >
-                <OrdinaryUser v-if="nameValue === 'ordinaryUser'"/>
+                <User v-if="nameValue === 'User'"/>
             </TabPane>
             <TabPane
-                name="innerUser"
+                name="Token"
                 :label="$t('user.innerUser')"
             >   
-                <InnerUser v-if="nameValue === 'innerUser'"/>
+                <Token v-if="nameValue === 'Token'"/>
             </TabPane>
         </Tabs>
     </div>
 </template>
 
 <script>
-import OrdinaryUser from './components/OrdinaryUser.vue';
-import InnerUser from './components/InnerUser.vue';
+import User from './components/User.vue';
+import Token from './components/Token.vue';
 export default {
     name: 'instancePools',
     components: {
-        InnerUser,
-        OrdinaryUser
+        Token,
+        User
     },
     data() {
         return {
-            nameValue: 'ordinaryUser'
+            nameValue: 'User'
         };
     }
 };

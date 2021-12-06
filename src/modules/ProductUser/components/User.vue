@@ -13,7 +13,7 @@
             width="30"
             :mask-closable="false"
         >
-            <CreateUser
+            <AssociatedUser
                 v-if="isHiden"
                 :userNameList="userNameList"
                 @submit="submitData"
@@ -30,11 +30,11 @@
 
 <script>
 import pageTable from '@/components/table/pageTable';
-import CreateUser from './Create.vue';
+import AssociatedUser from './AssociatedUser.vue';
 export default {
     components: {
         pageTable,
-        CreateUser
+        AssociatedUser
     },
     mounted() {
         this.getUserList();
@@ -42,7 +42,6 @@ export default {
     data() {
         const that = this;
         return {
-            nameValue: 'ordinaryUser',
             loading: false,
             isHiden: false,
             currentData: {},
