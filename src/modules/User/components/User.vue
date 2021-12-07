@@ -123,13 +123,13 @@ import UpdatePassword from './UpdatePassword.vue';
                 if (self) {
                     tmpData = {
                         old_password: data.old_password,
-                        password: data.new_password,
-                    }
+                        password: data.new_password
+                    };
                 }
                 else {
                     tmpData = {
                         password: data.new_password
-                    }
+                    };
                 }
                 this.$request({
                     url: this.$urlFormat('auth/users/{user_name}/passwd', {user_name: data.user_name}),
