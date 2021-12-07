@@ -36,7 +36,7 @@
 
 <script>
 import pageTable from '@/components/table/pageTable';
-import CreateUser from './Create.vue';
+import CreateUser from './CreateUser.vue';
 import UpdatePassword from './UpdatePassword.vue';
     export default {
         components: {
@@ -64,14 +64,14 @@ import UpdatePassword from './UpdatePassword.vue';
                         sortable: 'custom',
                     },
                     {
-                        key: 'role',
+                        key: 'is_admin',
                         title: this.$t('user.role'),
                         render(h, params) {
                             return (
                                 <div>
                                     {
-                                        <span>{params.row.roles.includes('product') ? that.
-                                        $t('com.ordinaryUser') : that.$t('com.sysAdmin')}</span>
+                                        <span>{params.row.is_admin ? that.$t('com.sysAdmin') : that.
+                                        $t('com.ordinaryUser')}</span>
                                     }
                                 </div>
                             );
@@ -115,49 +115,41 @@ import UpdatePassword from './UpdatePassword.vue';
             };
         },
         methods: {
-            submitPassword(data, isSelf) {
-                if (isSelf) {
-                    this.upsertSelfPassWord(data);
+            submitPassword(data, self) {
+                this.upsertPassWord(data, self);
+            },
+            upsertPassWord(data, self) {
+                let tmpData = {};
+                if (self) {
+                    tmpData = {
+                        old_password: data.old_password,
+                        password: data.new_password
+                    };
                 }
                 else {
-                    this.upsertPassWord(data);
+                    tmpData = {
+                        password: data.new_password
+                    };
                 }
-            },
-            upsertPassWord(data) {
                 this.$request({
                     url: this.$urlFormat('auth/users/{user_name}/passwd', {user_name: data.user_name}),
                     method: 'patch',
-                    data: {
-                        password: data.new_password
-                    }
+                    data: tmpData
                 }).then(data => {
                     if (data.status === 200) {
                         this.$Message.success({
                             content: this.$t('com.tipEditSuccX', {obj: this.$t('com.password')})
                         });
                         this.isHiden = false;
-                    }
-                });
-            },
-            upsertSelfPassWord(data) {
-                this.$request({
-                    url: 'auth/passwd',
-                    method: 'patch',
-                    data: {
-                        password: data.new_password,
-                        old_password: data.old_password
-                    }
-                }).then(data => {
-                    if (data.status === 200) {
-                        this.$store.removeUserData();
-                        this.$Modal.warning({
-                            title: this.$t('com.tips'),
-                            content: this.$t('user.tipPasswordModified'),
-                            onOk: () => {
-                                location.href = `${window.location.protocol}//${window.location.host}/login`;
-                            }
-                        });
-                        this.isHiden = false;
+                        if (self) {
+                            this.$Modal.warning({
+                                title: this.$t('com.tips'),
+                                content: this.$t('user.tipPasswordModified'),
+                                onOk: () => {
+                                    location.href = `${window.location.protocol}//${window.location.host}/login`;
+                                }
+                            });
+                        }
                     }
                 });
             },
@@ -167,9 +159,6 @@ import UpdatePassword from './UpdatePassword.vue';
                     content: this.$t('com.confirmDelX', {obj: this.$t('user.name')}) + params.row.user_name + '?',
                     onOk: () => {
                         this.onDelAdminUser(params.row.user_name);
-                    },
-                    onCancel: () => {
-                        this.$Message.info({content: this.$t('com.tipCancelDel')});
                     }
                 });
             },
@@ -205,16 +194,10 @@ import UpdatePassword from './UpdatePassword.vue';
                 }
             },
             onAddAdminUser(data) {
-                let roles = [];
-                roles.push(data.roles ? 'admin' : 'product');
                 this.$request({
                     url: 'auth/users',
                     method: 'post',
-                    data: {
-                        user_name: data.user_name,
-                        password: data.password,
-                        roles: roles
-                    }
+                    data: data
                 }).then(data => {
                     if (data.status === 200) {
                         this.$Message.success({content: this.$t('com.tipAddSucc')});

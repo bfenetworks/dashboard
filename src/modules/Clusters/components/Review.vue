@@ -117,7 +117,7 @@
                         <th>Total</th>
                     </tr>
 
-                    <template v-for="(subClusters, bfeCluster) in schedulerConfig.manual_scheduler">
+                    <template v-for="(subClusters, bfeCluster) in scheduler">
                         <tr
                             v-for="(subCluster, index) in Object.keys(subClusters)"
                             :class="[queryTotalRate(subClusters) !== 100 ? 'errorColor' : '', 'td-padding']"
@@ -160,7 +160,7 @@ export default {
             type: Array,
             required: true
         },
-        schedulerConfig: {
+        scheduler: {
             type: Object,
             default() {
                 return {};
@@ -241,6 +241,9 @@ export default {
 <style lang="less" scoped>
 .com-btn-box {
     margin-top: 15px;
+}
+.panel .panel-body ul .title {
+    width: 400px;
 }
 table {
     @tableBorder: 1px solid #f4f4f4;

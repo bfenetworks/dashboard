@@ -53,7 +53,7 @@ export default {
         handleSubmit(v) {
             this.upsertLoading = true;
             this.$request({
-                url: this.$urlFormat('products/{product_name}/sub_clusters'),
+                url: this.$urlFormat('products/{product_name}/sub-clusters'),
                 method: 'post',
                 data: v
             })

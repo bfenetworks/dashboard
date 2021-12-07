@@ -252,10 +252,10 @@ export default {
                     hash_header: 'Cookie:USERID'
                 },
                 timeouts: {
-                    timeout_conn_serv: 2,
-                    timeout_response_header: 60,
+                    timeout_conn_serv: 2000,
+                    timeout_response_header: 60000,
                     timeout_readbody_client: 30000,
-                    timeout_read_client_again: 30000,
+                    timeout_read_client_again: 60000,
                     timeout_write_client: 60000
                 },
                 retries: {

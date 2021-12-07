@@ -9,7 +9,7 @@ import routerConfig from '@/router/router';
 import NProgress from '@/utils/nprogress';
 import layoutApp from '@/layout/layout';
 import checkRole from '@/utils/authorize';
-import {urlFormat} from '@/utils/tool';
+import { urlFormat } from '@/utils/tool';
 import { i18n, loadLanguageAsync, getLang } from '@/utils/i18n';
 import store from '@/utils/store';
 

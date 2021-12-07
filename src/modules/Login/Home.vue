@@ -6,7 +6,7 @@
     </div>
     <div v-else>
         <h3>{{ $t('product.productLineManager') }} {{ user.name }}，{{ $t('product.welcome') }}!</h3>
-        <p class="home-title">{{ $t('product.productTips') }}{{ this.$route.params.name }}</p>
+        <p class="home-title">{{ $t('product.productTips') }}{{ $route.params.name }}</p>
     </div>
 </template>
 

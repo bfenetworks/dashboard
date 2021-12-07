@@ -1,11 +1,6 @@
 import Vue from 'vue';
 import { i18n } from '@/utils/i18n';
-import {
-    roleUndefined,
-    role2name,
-    roleProduct,
-    roleAdmin
-} from '@/utils/const';
+import { roleUndefined, role2name, roleProduct, roleAdmin } from '@/utils/const';
 
 export default {
     state: Vue.observable({
@@ -39,9 +34,9 @@ export default {
         if (!user) {
             return [];
         }
-        let roles = [{id: roleProduct, role: i18n.t('com.productView')}];
-        if (user.isAdmin) {
-            roles.push({id: roleAdmin, role: i18n.t('com.sysAdminView')});
+        let roles = [{ id: roleProduct, role: i18n.t('com.productView') }];
+        if (user.is_admin) {
+            roles.push({ id: roleAdmin, role: i18n.t('com.sysAdminView') });
         }
         return roles;
     },
@@ -85,10 +80,10 @@ export default {
         this.state.user = {
             name: newVal.user_name,
             sessionKey: newVal.session_key,
-            isAdmin: newVal.roles.includes('admin')
+            is_admin: newVal.is_admin
         };
         localStorage.setItem('user', JSON.stringify(this.state.user));
-        this.state.curRole = this.state.user.isAdmin ? roleAdmin : roleProduct;
+        this.state.curRole = this.state.user.is_admin ? roleAdmin : roleProduct;
     },
     removeUserData() {
         this.state.user = null;
