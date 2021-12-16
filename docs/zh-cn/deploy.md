@@ -10,7 +10,7 @@
 若想进行二次开发或者提交PR，请参考 [项目开发指南](./develop.md)。
 
 ## BFE Dashboard 部署
-BFE Dashboard 依赖 [BFE API Server](https://github.com/bfenetworks/api-server)。部署Dashboard 之前应该完成 API Server的部署，详见[API Server 部署](https://github.com/bfenetworks/api-server/docs/zh_cn/deploy.md)。
+BFE Dashboard 依赖 [BFE API Server](https://github.com/bfenetworks/api-server)。部署Dashboard 之前应该完成 API Server的部署，详见[API Server 部署](https://github.com/bfenetworks/api-server/blob/develop/docs/zh_cn/deploy.md)。
 
 
 生产环境具体部署步骤为：将编译产出放入 API Server的静态文件夹中。
